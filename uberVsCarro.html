@@ -1,0 +1,68 @@
+<meta charset="utf-8">
+
+<h1>Uber vs Carro</h1>
+
+<!-- fonte -> source -> src -->
+<script src="pegaNumero.js"></script>
+
+<h2>Uber</h2>
+
+<!-- biblioteca/library/lib é só uma convenção de nome -->
+<script src="http://caelum.github.io/projeto01/apostilaIgnore/libRelogio.js"></script>
+
+<script>
+    // Executar o código pegaNumero
+    // pegaNumero tem que retornar o que foi digitado
+    var distancia = pegaNumero("Digite a distância")
+
+    var velocidadeMedia = 25
+    var tempoEmMinutos = distancia / velocidadeMedia * 60
+
+    var precoUber = 2 + distancia * 1.40 + tempoEmMinutos * 0.28
+
+    document.write(`
+        Tempo: ${formataRelogio(tempoEmMinutos)}
+        <br>
+        Total: R$ ${precoUber.toFixed(2).replace(".", ",")}
+    `)
+
+</script>
+
+
+<h2>Carro</h2>
+
+<script>
+    var autonomia = 7
+    var precoLitroGasolina = 4.5
+
+    var totalGasolina 
+    totalGasolina = distancia / autonomia * precoLitroGasolina
+    
+    // Executar o código pegaNumero
+    // pegaNumero tem que retornar o que foi digitado
+    var totalEstacionamento = pegaNumero("Digite o valor do estacionamento")
+    
+    var totalCarro
+    totalCarro =  totalGasolina + totalEstacionamento 
+
+    
+    var totalGasolinaFormatadoEmReais = totalGasolina.toFixed(2).replace(".", ",")
+    var totalEstacionamentoFormatadoEmReais = totalEstacionamento.toFixed(2).replace(".", ",")
+    var totalCarroFormatadoEmReais = totalCarro.toFixed(2).replace(".", ",")
+
+
+    // C̶o̶n̶c̶a̶t̶e̶n̶a̶ç̶a̶o̶
+    // Interpolação
+    // Template string / texto template
+    document.write(`
+        Gasolina: R$ ${ totalGasolinaFormatadoEmReais }
+        <br>
+        Estacionamento: R$  ${ totalEstacionamentoFormatadoEmReais }
+        <br>
+        Total: R$  ${ totalCarroFormatadoEmReais }
+    `)
+
+
+ 
+
+</script>

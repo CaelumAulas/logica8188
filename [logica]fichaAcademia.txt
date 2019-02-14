@@ -1,0 +1,8 @@
+Cadastro da Academia
+
+
+Nome: Artur Diniz
+Peso: 74 kg
+Altura: 1,80 m
+IMC: 23,02 
+Data de Aniversário: 19/06/1993

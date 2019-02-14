@@ -1,0 +1,63 @@
+Uber vs Carro
+
+Uber
+
+Total: R$ 42,00
+
+
+
+
+
+/----------------------------------------\
+
+23km ->  distancia\
+
+R$ 1,40 p/ km -> taxa p/ km
+
+R$ 0,28 p/ min -> taxa p/ minuto
+
+R$ 2,00 sempre
+
+
+2 + 23km * 1,40 + 55,2 * 0,28
+
+\----------------------------------------/
+
+Carro
+
+Gasolina: R$ 14,00
+Estacionamento: R$ 5,00
+
+Total: R$ 19,00
+
+
+
+/----------------------------------------\
+
+23Km
+
+gasto de gasolina =>  14
+
+estacionamento => 5
+
+total => 19
+
+\----------------------------------------/
+
+Total: R$ 19,00
+
+
+
+R$ 4,50 - preço p/litro
+
+5.8Km - distancia
+
+7 km/l - autonomia
+
+\----------------------------------------/
+
+
+
+Entrada -> ????
+
+Número -> Texto

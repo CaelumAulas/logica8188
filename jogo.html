@@ -1,0 +1,33 @@
+<meta charset="utf-8">
+<title> Loteria </title>
+
+<h1> Loteria </h1>
+
+<script src="https://caelum.github.io/projeto01/apostilaIgnore/mostra.js"></script>
+<script src="pegaNumero.js"></script>
+
+<script>
+
+    var numeroSorteado = parseInt(Math.random() * 100)
+    
+    var numeroChutado = pegaNumero("Chute um valor")
+
+    var quantidadeTentativa = 1
+
+    while ( (isNaN(numeroChutado) || numeroChutado > 100) && quantidadeTentativa < 4 ){
+        quantidadeTentativa = quantidadeTentativa + 1
+        alert("Chance nº " + quantidadeTentativa)
+
+        numeroChutado = pegaNumero("Então... o chute está inválido!")
+    }
+
+    var ganhou = (numeroChutado == numeroSorteado)
+
+    if(ganhou){
+        mostra("Você ganhou. O número é " + numeroSorteado)
+    }
+    else {
+        mostra("Você perdeu. O número é " + numeroSorteado)
+    }
+
+</script>

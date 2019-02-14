@@ -1,0 +1,12 @@
+
+Calculadora de IMC
+
+O IMC é: 26
+
+
+
+/---------------------------------------------\
+| Regra de negócio:                           |
+|                                             |
+| Cálculo do IMC => peso / altura ao quadrado |
+\---------------------------------------------/

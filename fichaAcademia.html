@@ -1,0 +1,123 @@
+<!-- TODO
+
+
+    // Contador de fichas e mostrando título só na primeira
+
+    // se for pessoa idosa => precisa de acompanhamento
+    // se o imc for maior que o da obesidade mórbida => precisa de acompanhamento
+    // se o imc for abaixo da magreza absurda => precisa de acompanhamento
+
+ -->
+
+
+<meta charset="utf-8">
+
+<title>Sistema da Academia</title>
+
+<h1> Sistema da Academia </h1>
+
+Nome:
+<br>
+<input type="text" id="inputNome">
+<br><br>
+
+Peso: 
+<br>
+<input type="text" id="inputPeso">
+<br><br>
+
+Altura: 
+<br>
+<input type="text" id="inputAltura">
+<br><br>
+
+Data de Aniversário:
+<br>
+<input type="text" id="inputData">
+<br><br>
+
+<input type="checkbox" id="inputCardiaca">
+Tem alguma condição cardíaca?
+<br><br>
+
+<button onclick="cadastrar()"> Cadastrar </button>
+<br><br>
+
+
+<!-- Códigos =>  http://dontpad.com/logica8188 -->
+<script src="https://caelum.github.io/projeto01/apostilaIgnore/libBrasil.js"></script>
+<script src="https://caelum.github.io/projeto01/apostilaIgnore/mostra.js"></script>
+
+<script src="https://caelum.github.io/projeto01/apostilaIgnore/libIdade.js"></script>
+
+<script>
+// Indentação de código / Alinhamento
+// Contador
+var numeroDaFicha = 0
+
+function cadastrar(){
+
+    numeroDaFicha = numeroDaFicha + 1
+    
+    var nome = inputNome.value
+    var peso = parseFloatBrasil(inputPeso.value)
+    var altura = parseFloatBrasil(inputAltura.value)
+    
+    var imc = peso / (altura * altura)
+
+    var dataAniversario = inputData.value
+
+    var dataAniversarioLista = dataAniversario.split("/")
+
+    var dia = dataAniversarioLista[0]
+    var mes = dataAniversarioLista[1]
+    var ano = dataAniversarioLista[2]
+
+    var idade = calculaIdade(dia, mes, ano)
+
+    var fraseAcompanhamentoMedico
+    var isCardiaca = inputCardiaca.checked
+    var isMenorDeIdade = idade < 15
+
+    // SE a pessoa é cardíaca
+    // Lógica booleana
+    if( isCardiaca || isMenorDeIdade ){
+        fraseAcompanhamentoMedico = "Precisa de acompanhamento médico"
+    }
+
+    // SE a pessoa NÃO é cardíaca
+    //! NÃO/ NEGAÇÃO
+    if( !isCardiaca && !isMenorDeIdade) {
+        fraseAcompanhamentoMedico = "NÃO precisa de acompanhamento médico"
+    }
+
+    if(numeroDaFicha == 1){
+        mostra(`
+            <h2> Lista de fichas: </h2>
+            <hr>
+            <hr>
+        `)
+    }
+    
+    mostra(`
+
+        <hr>
+        <h2> Ficha ${numeroDaFicha} </h2>
+
+        Nome: ${nome}
+        <br>
+        Peso: ${formataFloatBrasil(peso)} kg
+        <br>
+        Altura: ${formataFloatBrasil(altura)} m
+        <br>
+        IMC: ${formataFloatBrasil(imc)}
+        <br>
+        Data de Aniversário: ${dataAniversario}
+        <br>
+        Idade: ${idade}
+        <br>
+        
+        ${fraseAcompanhamentoMedico}
+    `)
+}
+</script>
